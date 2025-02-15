@@ -1,0 +1,87 @@
+package Lecture_2_Practice;
+
+
+class Person
+{
+	private int id;			//Private Access specifier is used because we don't want that our 3 
+	private int age;	   //properties would be manipulated from outside of the class if we 
+	private double height;	  //make it public it would be accessible in and out of the class as well.
+	
+	
+	public int getId()      //Getter used to get Id 
+	{
+		return id;
+	}
+	
+	public void setId(int x)    // Setter use to set Id Note that it has a void return type it means it
+	{							// won't return anything just set the value also it takes one parameter 
+		id = x;					// so user call the setter by giving one value which is   
+	}							// going to set in that property
+	
+	public int getAge() 		//Getter used to get Age
+	{
+		return age;
+	}
+	
+	public void setAge(int x) 
+	{
+		age = x;
+	}
+	
+	public double getHeight()		//Getter used to get Height 
+	{
+		return height;
+	}
+	
+	public void setHeight(double x) 
+	{
+		height = x;
+	}
+	
+	
+	public void display()
+	{
+		System.out.println("Person's Id     : " + id );     //display function will display all the details
+		System.out.println("Person's Age    : " + age );   // see it uses the private properties 
+		System.out.println("Person's Height : " + height );//because it is in same class
+	}
+	public boolean isAdult()
+	{
+		if(age >= 18)     // age is used in a condition
+		{			
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+}
+
+
+public class Main_Class {
+
+	public static void main(String[] args) {
+		
+		Person p1 = new Person();
+		
+		p1.setId(100);			//Set the id
+		p1.setAge(23);			//Set the Age
+		p1.setHeight(5.6);		//Set the Height
+
+		p1.display();			//display method display all the details
+		
+		if(p1.isAdult()) //Return true if age is above 18 else false
+		{
+			System.out.println("The Person is Adult because the Age is " + p1.getAge()); //now we take age from the getter 
+		}
+		else
+		{
+			System.out.println("The Person is not an Adult because the Age is " + p1.getAge()); //age from the getter 
+		}
+	
+
+	}
+
+}
